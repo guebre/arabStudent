@@ -73,7 +73,9 @@ class Users_model extends CI_Model
         } while ($num >= 1);
         return $url_code;
     }
-
+    /**
+     * Get a user by email
+     */
     function count_results($email) 
     {
         $this->db->where('usr_email', $email);
@@ -112,11 +114,11 @@ class Users_model extends CI_Model
     }
     
     /**
-     * Update user email
+     * Update user code
      */
     function update_user_code($data) 
     {
-        $this->db->where('usr_email', $data['usr_email']);
+        $this->db->where('usr_pwd_change_code', $data['usr_pwd_change_code']);
         if ($this->db->update('users', $data)) {
         return true;
         } else {

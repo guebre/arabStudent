@@ -1,6 +1,6 @@
 <div class="container">
     <?php echo validation_errors(); ?>
-    <?php echo form_open('register/index', 'role="form" class="formsignin"'); ?>
+    <?php echo form_open('register/index', 'role="form" class="form-signin"'); ?>
         <h2 class="form-signin-heading"><?php echo $this->lang->line('register_page_title'); ?></h2>
         <input type="text" class="form-control" name="usr_fname" placeholder="<?php echo $this->lang->line('register_first_name'); ?>" autofocus>
         <input type="text" class="form-control" name="usr_lname" placeholder="<?php echo $this->lang->line('register_last_name'); ?>" >
