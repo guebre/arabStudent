@@ -6,6 +6,12 @@ class Password extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
+        $this->load->library('encryption');
+        // Get a hex-encoded representation of the key:
+        $key = bin2hex($this->encryption->create_key(16));
+        // Put the same value in your config with hex2bin(),
+        // so that it is still passed as binary to the library:
+        $config['encryption_key'] = hex2bin($key);
         $this->load->helper('form');
         $this->load->helper('file');
         $this->load->helper('url');
@@ -50,7 +56,7 @@ class Password extends CI_Controller
                     echo $file = str_replace('%link%', $link, $file);
                 
                     // Envoi du mail 
-                    if (mail ($email, $this->lang->line('email_subject_reset_password'),$file, 'From:me@domain.com')) {
+                    if (mail ($email, $this->lang->line('email_subject_reset_password'),$file, 'From:'.base_url().'')) {
                         redirect('signin');
                         
                     } else {
@@ -78,7 +84,6 @@ class Password extends CI_Controller
             } else {
             $data['code'] = xss_clean($this->uri->segment(3));
         }
-
         // si la validation echoue ou si c'est une premiere visite
         if ($this->form_validation->run() == FALSE) {
 
@@ -117,15 +122,39 @@ class Password extends CI_Controller
             $this->load->view('users/new_password', $data);
             $this->load->view('common/footer', $data);
         } else {
-            // Does code from input match the code against the email
-            $email = xss_clean($this->input->post('usr_email')); 
-            if (!$this->Users_model->does_code_match($data, $email)) { //Code doesn't match
-                redirect ('users/forgot_password');
+                    // Does code from input match the code against the email
+                    $email = xss_clean($this->input->post('usr_email')); 
+                    if (!$this->Users_model->does_code_match($data, $email)) { //Code doesn't match
+                        redirect ('users/forgot_password');
+                    } else { // Code does match
+                            // create a hash value from the supplied password1 
+                            $hash = $this->encryption->encrypt($this->input->post('usr_password1'));
+                            $data = array(
+                                'usr_hash' => $hash,
+                                'usr_email' => $email
+                            );
+                            
+                            if($this->Users_model->update_user_password($data)){
 
-                } else { // Code does match
+                                $link = base_url('signin'); 
+                                $result = $this->Users_model->get_user_details_by_email($email);
+                                foreach ($result->result() as $row) {
+                                    $usr_fname = $row->usr_fname;
+                                    $usr_lname = $row->usr_lname;
+                                }
+                                $file =  $file = file_get_contents(base_url()."application/views/email_scripts/new_password.txt");
+                                $file = str_replace('%usr_fname%', $usr_fname, $file);
+                                $file = str_replace('%usr_lname%', $usr_lname, $file);
+                                $file = str_replace('%password%', $password, $file);
+                                $file = str_replace('%link%', $link, $file);
+
+                                // Send a mail 
+                                if (mail ($email, $this->lang->line('email_subject_new_password'),$file, 'From:'.base_url().'') ) {
+                                    redirect ('signin');
+                                }
+                            }
+                        }
                     
-               }
-
-
+                }
     }
 }  
