@@ -21,7 +21,7 @@ class Signin extends CI_Controller {
             $this->form_validation->set_rules('usr_email', $this->lang->line('signin_email'), 'required|valid_email|min_length[5]|max_length[125]');
             $this->form_validation->set_rules('usr_password', $this->lang->line('signin_password'), 'required|min_length[5]|max_length[30]');
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('common/login_header');
+                $this->load->view('common/header');
                 $this->load->view('users/signin');
                 $this->load->view('common/footer');
             } else {
