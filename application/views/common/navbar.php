@@ -36,14 +36,13 @@ $image_properties = array(
                 <a class="nav-link btn btn-outline-warning" href="<?php echo base_url('signin'); ?>">Connexion <span class="sr-only">(current)</span></a>
               </li>
             
-              <!--<li class="nav-item dropdown">
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Langue</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown07">
-                  <a class="dropdown-item" href="index.html#">Action</a>
-                  <a class="dropdown-item" href="index.html#">Another action</a>
-                  <a class="dropdown-item" href="index.html#">Something else here</a>
+                  <a class="dropdown-item" href="index.html#">Se d&eacute;connecter </a>
+                  <a class="dropdown-item" href="index.html#">Dd&eacute;tails</a>
                 </div>
-              </li>-->
+              </li>
 
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>

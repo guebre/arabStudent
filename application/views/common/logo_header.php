@@ -8,7 +8,6 @@ $image_properties = array(
     'title' => 'Logo',
     'rel'   => ''
 );
-
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">

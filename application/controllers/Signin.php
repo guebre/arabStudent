@@ -54,6 +54,8 @@ class Signin extends CI_Controller {
                                         'usr_id' => $row->usr_id,
                                         'acc_id' => $row->acc_id,
                                         'usr_email' => $row->usr_email,
+                                        'usr_fname' => $row->usr_fname,
+                                        'usr_lname' => $row->usr_lname,
                                         'usr_access_level' => $row->usr_access_level,
                                         'logged_in' => TRUE
                                     );

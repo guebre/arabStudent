@@ -31,6 +31,7 @@ class Me extends CI_Controller {
         $this->form_validation->set_rules('usr_zip_pcode', $this->lang->line('usr_zip_pcode'), 'required|min_length[1]|max_length[125]');
         $data['id'] = $this->session->userdata('usr_id');
         $data['page_heading'] = 'Edit my details';
+       
         // Begin validation
         if($this->form_validation->run() == FALSE) { // First load or probleme with form
  
@@ -58,10 +59,10 @@ class Me extends CI_Controller {
             $data['usr_add3'] = array('name' => 'usr_add3', 'class' =>'form-control', 'id' => 'usr_add3', 'value' =>set_value('usr_add3', $usr_add3), 'maxlength' => '100','size' => '35');
             $data['usr_town_city'] = array('name' => 'usr_town_city','class' => 'form-control', 'id' => 'usr_town_city', 'value' =>set_value('usr_town_city', $usr_town_city), 'maxlength' =>'100', 'size' => '35');
             $data['usr_zip_pcode'] = array('name' => 'usr_zip_pcode','class' => 'form-control', 'id' => 'usr_zip_pcode', 'value' =>set_value('usr_zip_pcode', $usr_zip_pcode), 'maxlength' =>'100', 'size' => '35');
-            $this->load->view('common/header', $data);
-            $this->load->view('nav/top_nav', $data);
+            $this->load->view('common/header');
+            $this->load->view('common/navbar_users');
             $this->load->view('users/me', $data);
-            $this->load->view('common/footer', $data);
+            $this->load->view('common/copyright');
         } else { // Validation passed, now escape the data
             
             $data = array(
@@ -108,6 +109,10 @@ class Me extends CI_Controller {
         }
    
    
+    }
+
+    public function displome(){
+
     }
 
 
