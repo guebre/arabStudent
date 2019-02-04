@@ -26,6 +26,7 @@ $lang['register_page_title'] = "Register...";
 $lang['register_first_name'] = "First Name";
 $lang['register_last_name'] = "Last Name";
 $lang['register_email'] = "Email";
+$lang['register_accueil_message'] = "I start";
 // Emails
 $lang['email_subject_new_password'] = "Your new password.";
 $lang['email_subject_reset_password'] = "Reset your password.";

@@ -5,21 +5,22 @@
         <p  class="bg-light text-danger font-weight-bold text-center"> Incrivez-vous des à presents pour bénéficier de meilleurs opportinutés  sur le plan nationale et internationale </p>
     </div>
 
-    <form> 
+    <?php echo form_open('register'); ?> 
        <fieldset>   
-            <legend class="text-info">Je m'inscris </legend>
+            <legend class="text-info"><?php  echo $this->lang->line('register_accueil_message'); ?></legend>
             <div class="form-group">
-                <input type="text"  name="usr_fname" class="form-control" placeholder="Nom">
+               <input type="text" class="form-control" name="usr_fname" placeholder="<?php echo $this->lang->line('register_first_name'); ?>" autofocus>
             </div>
             <div class="form-group">
-                <input type="text" name="usr_lname" class="form-control" placeholder="Prenom">
+                <input type="text" class="form-control" name="usr_lname" placeholder="<?php echo $this->lang->line('register_last_name'); ?>" >
             </div>
             <div class="form-group">
-                <input type="text" name="usr_email" class="form-control" placeholder="Email">
+               <input type="email" class="form-control" name="usr_email" placeholder="<?php echo $this->lang->line('register_email');?>" >
             </div>
-            <button type="submit" class="btn btn-success btn-block">Valider</button>
+            <?php echo form_submit('submit', 'Register', 'class="btn btn-success btn-block"'); ?>
+
         </fieldset>
-    </form>
+   <?php echo form_close(); ?>
     <!--<form>
         <div class="form-group row">
             <div class="col-md-3">

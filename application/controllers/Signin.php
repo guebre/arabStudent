@@ -5,7 +5,7 @@ class Signin extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->lang->load('en_admin', 'english');
+        $this->lang->load('fr_admin', 'french');
         $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
     }
     
@@ -22,28 +22,31 @@ class Signin extends CI_Controller {
             $this->form_validation->set_rules('usr_password', $this->lang->line('signin_password'), 'required|min_length[5]|max_length[30]');
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('common/header');
+                $this->load->view('common/logo_header');
                 $this->load->view('users/signin');
-                $this->load->view('common/footer');
+                $this->load->view('common/copyright');
             } else {
                 $usr_email = $this->input->post('usr_email');
                 $password = $this->input->post('usr_password');
-
                 $this->load->model('signin_model');
                 $query = $this->signin_model->does_user_exist($usr_email);
                 if ($query->num_rows() == 1) { // One matching row found
                     foreach ($query->result() as $row) {
                         // Call Encryption library
-                        $this->load->library('encryption');
                         // Generate hash from a their password
-                            $hash = $this->encryption->decrypt($password); 
+                            //$hash = $this->encryption->encrypt($password);
+                            //var_dump($this->encryption->decrypt($row->usr_hash));
+                            $hash = $this->encryption->decrypt($row->usr_hash);
                             if ($row->usr_is_active != 0) { // See if the user is active or not
                                 // Compare the generated hash with that in the database
-                                if ($hash != $row->usr_hash) {
+                                //$hash != $row->usr_hash
+                                if ($hash != $password) {
                                     // Didn't match so send back to login
                                     $data['login_fail'] = true;
-                                    $this->load->view('common/login_header');
+                                    $this->load->view('common/header');
+                                    $this->load->view('common/logo_header');
                                     $this->load->view('users/signin', $data);
-                                    $this->load->view('common/footer');
+                                    $this->load->view('common/copyright');
                                 } else {
                                     // values match the password supplied is correct
                                     // we create a session data 
@@ -70,6 +73,12 @@ class Signin extends CI_Controller {
                                 redirect('signin');
                             }
                     }
+                }else{
+                    $data['login_fail'] = true;
+                    $this->load->view('common/header');
+                    $this->load->view('common/logo_header');
+                    $this->load->view('users/signin', $data);
+                    $this->load->view('common/copyright');
                 }
             
             }

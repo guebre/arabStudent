@@ -6,22 +6,10 @@ class Me extends CI_Controller {
     function __construct() {
 
         parent::__construct();
-        $this->load->helper('form');
-        $this->load->helper('url');
-        $this->load->helper('security');
-        $this->load->helper('file'); // for html emails
-        $this->load->helper('language');
+   
         $this->load->model('Users_model');
-        $this->load->library('session');
-        $this->load->library('encryption');
-        // Get a hex-encoded representation of the key:
-        $key = bin2hex($this->encryption->create_key(16));
-        // Put the same value in your config with hex2bin(),
-        // so that it is still passed as binary to the library:
-        $config['encryption_key'] = hex2bin($key);
         // Load language file
-        $this->lang->load('en_admin', 'english');
-        $this->load->library('form_validation');
+        $this->lang->load('fr_admin', 'french');
         $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
 
         if ( ($this->session->userdata('logged_in') == FALSE) || (!$this->session->userdata('usr_access_level') >= 2) ) {

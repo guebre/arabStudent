@@ -22,20 +22,22 @@ below and if your email is in the database we will send you a
 new password' ;
 $lang['signin_forgot_password'] = "Forgot Password?";
 // Register
-$lang['register_page_title'] = "Register...";
-$lang['register_first_name'] = "First Name";
-$lang['register_last_name'] = "Last Name";
+$lang['register_page_title'] = "Inscription...";
+$lang['register_first_name'] = "Nom ";
+$lang['register_last_name'] = "Prenom";
 $lang['register_email'] = "Email";
+$lang['register_accueil_message'] = "Je m'inscris";
 // Emails
 $lang['email_subject_new_password'] = "Your new password.";
+$lang['email_subject_password'] = "Your new password.";
 $lang['email_subject_reset_password'] = "Reset your password.";
 // New/Edit User
 $lang['usr_form_instruction_new'] = "New User Details";
 $lang['usr_form_instruction_edit'] = "Edit User Details";
 $lang['usr_id'] = "ID";
-$lang['usr_fname'] = "First name";
-$lang['usr_lname'] = "Last Name";
-$lang['usr_uname'] = "Username";
+$lang['usr_fname'] = "Nom";
+$lang['usr_lname'] = "Prenom";
+$lang['usr_uname'] = "Pseudo";
 $lang['usr_email'] = "Email";
 $lang['usr_confirm_email'] = "Confirm Email";
 $lang['usr_add1'] = "Address 1";
