@@ -47,6 +47,16 @@ $lang['usr_town_city'] = "Town/City";
 $lang['usr_zip_pcode'] = "Zip/Postal Code";
 $lang['usr_access_level'] = "User Access Level";
 $lang['is_active'] = "User is active?";
+$lang['date_naiss'] = "Date naissance";
+$lang['lieu_naiss'] = "Lieu naissance";
+$lang['situation_mat'] = "situation matrimoniale";
+$lang['fin_etude'] = "Année de fin d'etude";
+$lang['formation'] = "Formation après diplomes";
+$lang['association'] = "Adhésion à une association";
+$lang['telephone'] = "Telephone";
+$lang['secteur_act'] = "Secteur d'activité";
+
+
 // Forgot password
 $lang['forgot_pwd_success_heading'] = "Email Sent:";
 $lang['forgot_pwd_success_msg'] = "An email has been sent to the
@@ -60,6 +70,8 @@ $lang['signin_new_pwd_code'] = "Code";
 // Delete
 $lang['delete_confirm_message'] = "Are you sure you want to delete
 the user: ";
+$lang['common_form_elements_go'] = "Valider";
+$lang['common_form_elements_cancel'] = "Annuler";
 
 
 // Accueil message 

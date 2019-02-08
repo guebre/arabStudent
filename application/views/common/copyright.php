@@ -1,5 +1,4 @@
-
-  <div class="container-fluid mt-5">
+<div class="container-fluid mt-5">
        <div class="row">
            <div class="col-md-12 bg-secondary text-white text-center">
                 <ul class="list-inline">
@@ -13,5 +12,6 @@
   <script type="text/javascript" src="<?php  echo  js_url('jquery-3.3.1'); ?>"></script>  
   <script type="text/javascript" src="<?php  echo  js_url('popper'); ?>"></script> 
   <script type="text/javascript" src="<?php  echo  js_url('bootstrap'); ?>"></script> 
+  <script type="text/javascript" src="<?php  echo  js_url('code'); ?>"> </script> 
 </body>
 </html>
