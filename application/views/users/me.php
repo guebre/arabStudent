@@ -14,10 +14,17 @@
     <div class="tab-content" id="nav-tabContent">
     <br>
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div id="profile1">
+            </div> 
             <?php  $this->load->view('users/profile1'); ?>
+             
+            
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <?php  $this->load->view('users/profile2'); ?>
+            <div class="profile2">
+                <?php  $this->load->view('users/profile2'); ?>
+            </div>
+
         </div>
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <?php  $this->load->view('users/profile3'); ?>
