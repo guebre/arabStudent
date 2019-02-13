@@ -49,11 +49,11 @@ $lang['usr_access_level'] = "User Access Level";
 $lang['is_active'] = "User is active?";
 $lang['date_naiss'] = "Date naissance";
 $lang['lieu_naiss'] = "Lieu naissance";
-$lang['situation_mat'] = "situation matrimoniale";
+$lang['situation_mat'] = "Situation matrimoniale";
 $lang['fin_etude'] = "Année de fin d'etude";
 $lang['formation'] = "Formation après diplomes";
 $lang['association'] = "Adhésion à une association";
-$lang['telephone'] = "Telephone";
+$lang['telephone'] = "Téléphone";
 $lang['secteur_act'] = "Secteur d'activité";
 
 
@@ -71,7 +71,9 @@ $lang['signin_new_pwd_code'] = "Code";
 $lang['delete_confirm_message'] = "Are you sure you want to delete
 the user: ";
 $lang['common_form_elements_go'] = "Valider";
+$lang['common_form_elements_update'] = "Update";
 $lang['common_form_elements_cancel'] = "Annuler";
+$lang['update_erreur'] = "Erreur de traitement";
 
 
 // Accueil message 

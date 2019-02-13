@@ -19,7 +19,7 @@ class Me extends CI_Controller {
 
     public function index() {
         // Set validation rules
-        $this->form_validation->set_rules('usr_fname', $this->lang->line('usr_fname'), 'required|min_length[1]|max_length[125]');
+       /* $this->form_validation->set_rules('usr_fname', $this->lang->line('usr_fname'), 'required|min_length[1]|max_length[125]');
         $this->form_validation->set_rules('usr_lname', $this->lang->line('usr_lname'), 'required|min_length[1]|max_length[125]');
         $this->form_validation->set_rules('date_naiss', $this->lang->line('date_naiss'), 'required|min_length[1]|max_length[125]');
         $this->form_validation->set_rules('lieu_naiss', $this->lang->line('lieu_naiss'), 'required|min_length[1]|max_length[255]|valid_email');
@@ -28,14 +28,14 @@ class Me extends CI_Controller {
         $this->form_validation->set_rules('formation', $this->lang->line('formation'), 'min_length[1]|max_length[125]');
         $this->form_validation->set_rules('association', $this->lang->line('association'), 'min_length[1]|max_length[125]');
         $this->form_validation->set_rules('secteur_act', $this->lang->line('secteur_act'), 'required|min_length[1]|max_length[125]');
-        $this->form_validation->set_rules('telephone', $this->lang->line('telephone'), 'required|min_length[1]|max_length[125]');
+        $this->form_validation->set_rules('telephone', $this->lang->line('telephone'), 'required|min_length[1]|max_length[125]');*/
         $data['id'] = $this->session->userdata('usr_id');
         $data['page_heading'] = 'Mes infos';
        
         // Begin validation
         if($this->form_validation->run() == FALSE) { // First load or probleme with form
  
-            $query = $this->Users_model->get_user_details($data['id']);
+            $query = $this->Users_model->get_user_details_v1($data['id']);
             foreach ($query->result() as $row) {
 
                 $usr_fname = $row->usr_fname;
@@ -47,6 +47,15 @@ class Me extends CI_Controller {
                 $usr_add3 = $row->usr_add3;
                 $usr_town_city = $row->usr_town_city;
                 $usr_zip_pcode = $row->usr_zip_pcode;
+
+                $usr_date_naiss = $row->date_naiss;
+                $usr_lieu_naiss = $row->lieu_naiss;
+                $usr_situation_mat = $row->situation_mat;
+                $usr_association =$row->association;
+                $usr_formation = $row->formation;
+                $usr_phone = $row->phone;
+                $usr_sect_activite = $row->sect_activite;
+
             }    
             //Populate form fields with data 
             $data['usr_fname'] = array('name' => 'usr_fname', 'class' =>'form-control', 'id' => 'usr_fname', 'value' =>set_value('usr_fname', $usr_fname), 'maxlength' => '100','size' => '35');
@@ -54,11 +63,22 @@ class Me extends CI_Controller {
             $data['usr_uname'] = array('name' => 'usr_uname', 'class' =>'form-control', 'id' => 'usr_uname', 'value' =>set_value('usr_uname', $usr_uname), 'maxlength' => '100','size' => '35');
             $data['usr_email'] = array('name' => 'usr_email', 'class' =>'form-control', 'id' => 'usr_email', 'value' =>set_value('usr_email', $usr_email), 'maxlength' => '100','size' => '35');
             $data['usr_confirm_email'] = array('name' =>'usr_confirm_email', 'class' => 'form-control', 'id' =>'usr_confirm_email', 'value' => set_value('usr_confirm_email',$usr_email), 'maxlength' => '100', 'size' => '35');
-            $data['usr_add1'] = array('name' => 'usr_add1', 'class' =>'form-control', 'id' => 'usr_add1', 'value' =>set_value('usr_add1', $usr_add1), 'maxlength' => '100','size' => '35');
+           /* $data['usr_add1'] = array('name' => 'usr_add1', 'class' =>'form-control', 'id' => 'usr_add1', 'value' =>set_value('usr_add1', $usr_add1), 'maxlength' => '100','size' => '35');
             $data['usr_add2'] = array('name' => 'usr_add2', 'class' =>'form-control', 'id' => 'usr_add2', 'value' =>set_value('usr_add2', $usr_add2), 'maxlength' => '100','size' => '35');
             $data['usr_add3'] = array('name' => 'usr_add3', 'class' =>'form-control', 'id' => 'usr_add3', 'value' =>set_value('usr_add3', $usr_add3), 'maxlength' => '100','size' => '35');
             $data['usr_town_city'] = array('name' => 'usr_town_city','class' => 'form-control', 'id' => 'usr_town_city', 'value' =>set_value('usr_town_city', $usr_town_city), 'maxlength' =>'100', 'size' => '35');
             $data['usr_zip_pcode'] = array('name' => 'usr_zip_pcode','class' => 'form-control', 'id' => 'usr_zip_pcode', 'value' =>set_value('usr_zip_pcode', $usr_zip_pcode), 'maxlength' =>'100', 'size' => '35');
+            */
+
+            $data['usr_date_naiss'] = array('type' =>'date','name' => 'usr_date_naiss','class' => 'form-control', 'id' => 'usr_date_naiss', 'value' =>set_value('usr_date_naiss', $usr_date_naiss));
+            $data['usr_lieu_naiss'] = array('name' => 'usr_lieu_naiss','class' => 'form-control', 'id' => 'usr_date_naiss', 'value' =>set_value('usr_lieu_naiss', $usr_lieu_naiss));
+            $data['usr_situation_mat'] = $usr_situation_mat;
+            $data['usr_formation'] = array('name' => 'usr_formation','class' => 'form-control', 'id' => 'usr_formation', 'value' =>set_value('usr_formation', $usr_formation));
+            $data['usr_association'] = array('name' => 'usr_association','class' => 'form-control', 'id' => 'usr_association', 'value' =>set_value('usr_association', $usr_association));
+            $data['usr_sect_activite'] = array('name' => 'usr_sect_activite','class' => 'form-control', 'id' => 'usr_sect_activite', 'value' =>set_value('usr_sect_activite', $usr_sect_activite));
+            $data['usr_phone'] = array('name' => 'usr_phone','class' => 'form-control', 'id' => 'usr_phone', 'value' =>set_value('usr_phone', $usr_phone));
+            
+            
             $this->load->view('common/header');
             $this->load->view('common/navbar_users');
             $this->load->view('users/me', $data);
@@ -174,6 +194,65 @@ class Me extends CI_Controller {
                 ->set_output(json_encode($json));
                
             }   
+
+
+        }
+        
+
+    }
+
+    public function profile2(){
+    
+        /*$this->form_validation->set_rules('usr_date_naiss', $this->lang->line('date_naiss'), 'required|min_length[1]|max_length[125]');
+        $this->form_validation->set_rules('usr_lieu_naiss', $this->lang->line('lieu_naiss'), 'required|min_length[1]|max_length[255]|valid_email');
+        $this->form_validation->set_rules('usr_situation_mat', $this->lang->line('situation_mat'), 'required|min_length[1]|max_length[255]|valid_email|matches[usr_email]');
+        $this->form_validation->set_rules('usr_formation', $this->lang->line('formation'), 'min_length[1]|max_length[125]');
+        $this->form_validation->set_rules('usr_association', $this->lang->line('association'), 'min_length[1]|max_length[125]');
+        $this->form_validation->set_rules('usr_sect_activite', $this->lang->line('secteur_act'), 'required|min_length[1]|max_length[125]');
+        $this->form_validation->set_rules('usr_phone', $this->lang->line('telephone'), 'required|min_length[1]|max_length[125]');
+       */
+        $data['id'] = $this->session->userdata('usr_id');
+
+          // Begin validation
+          if($this->form_validation->run() == FALSE) { // First load or probleme with form
+            
+           /* $json = array(
+                'usr_date_naiss' => form_error('usr_date_naiss'),
+                'usr_lieu_naiss' => form_error('usr_lieu_naiss'),
+                'usr_situation_mat' => form_error('usr_situation_mat'),
+                'usr_formation' => form_error('usr_formation'),
+                'usr_sect_activite' => form_error('usr_sect_activite')
+            );
+            $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($json));
+           */
+           $data =  array(
+              'date_naiss' => $this->input->post('usr_date_naiss'),
+              'lieu_naiss' => $this->input->post('usr_lieu_naiss'),
+              'situation_mat' => $this->input->post('usr_situation_mat'),
+              'formation' => $this->input->post('usr_formation'),
+              'sect_activite' => $this->input->post('usr_sect_activite'),
+              'phone' => $this->input->post('usr_phone'),
+              'association' => $this->input->post('usr_association')
+           );
+          $id = $this->session->userdata('usr_id');
+            if ($this->Users_model->process_update_user_infos($id, $data)) {
+                $json = array(
+                    'ok' => '<div class="alert alert-success"> update ok </div>'
+                );
+                $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($json));
+               
+            } else {
+                $json = array(
+                    'error' => '<div class="alert alert-danger">',$this->lang->line('update_erreur'),'</div>'
+                );
+                $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($json));
+            }  
 
 
         }

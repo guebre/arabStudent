@@ -21,10 +21,9 @@
             
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <div class="profile2">
-                <?php  $this->load->view('users/profile2'); ?>
+            <div id="profile2">
             </div>
-
+           <?php  $this->load->view('users/profile2'); ?>
         </div>
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <?php  $this->load->view('users/profile3'); ?>

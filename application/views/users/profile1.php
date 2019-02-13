@@ -30,7 +30,7 @@
    
     <div class="form-group">
         <button type="submit" class="btn btn-success" id="submit_profile">
-            <?php echo $this->lang->line('common_form_elements_go');?>
+            <?php echo $this->lang->line('common_form_elements_update');?>
             <i></i>
             </button>
             or <?php echo anchor('users',$this->lang->line('common_form_elements_cancel'),'class="btn btn-info"');?>

@@ -32,10 +32,44 @@ class Users_model extends CI_Model
         }
     }
 
+    function process_update_user_infos($id, $data) 
+    {
+        $this->db->where('id_user', $id);
+        if ($this->db->update('users_infos', $data)) {
+          return true;
+        } else {
+          return false;
+        }
+    }
+
     function get_user_details($id)
     {
         $this->db->where('usr_id', $id);
         $result = $this->db->get('users');
+        if ($result) {
+        return $result;
+        } else {
+        return false;
+        }
+    }
+
+    function get_user_details_v1($id)
+    {   
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('usr_id',$id);
+        $this->db->join('users_infos','users.usr_id = users_infos.id_user');
+        $result = $this->db->get();
+        if ($result) {
+        return $result;
+        } else {
+        return false;
+        }
+    }
+    function get_user_infos($id)
+    {
+        $this->db->where('usr_id', $id);
+        $result = $this->db->get('users_infos');
         if ($result) {
         return $result;
         } else {
