@@ -261,6 +261,56 @@ class Me extends CI_Controller {
     }
     
 
+    public function profile3(){
+    
+        $this->form_validation->set_rules('usr_lib_diplome', $this->lang->line('lib_diplome'), 'required|min_length[5]|max_length[125]');
+        $this->form_validation->set_rules('usr_date_diplome', $this->lang->line('date_obtention'), 'numeric'); 
+        //$json = array();
+        $data['id'] = $this->session->userdata('usr_id');
+          // Begin validation
+          if($this->form_validation->run() == FALSE) { // First load or probleme with form
+            
+            $json = array(
+                'usr_lib_diplome' => form_error('usr_lib_diplome'),
+                'usr_date_diplome' => form_error('usr_date_diplome'),
+            );
+            $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($json));
+
+        } else {
+
+            $id = $this->session->userdata('usr_id');
+            $data =  array(
+                'lib_diplome' => $this->input->post('usr_lib_diplome'),
+                'date_obtention' => $this->input->post('usr_date_diplome'),
+                'id_user' =>  $id
+             );
+
+            if ($this->Users_model->process_create_user_diplome($data)) {
+                $json = array(
+                    'ok' => '<div class="alert alert-success">Ajout ok</div>'
+                );
+                $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($json));
+                
+            } else {
+
+                $json = array(
+                    'error' => '<div class="alert alert-danger">',$this->lang->line('update_erreur'),'</div>'
+                );
+                $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($json));
+            }  
+  
+        }
+        
+
+    }
+
+
     public function change_password() {
 
         $this->form_validation->set_rules('usr_new_pwd_1', $this->lang->line('signin_new_pwd_pwd'),'required|min_length[5]|max_length[125]');
@@ -289,9 +339,6 @@ class Me extends CI_Controller {
    
     }
 
-    public function displome(){
-
-    }
     /**public function index() {
         // Set validation rules
         $this->form_validation->set_rules('usr_fname', $this->lang->line('usr_fname'), 'required|min_length[1]|max_length[125]');

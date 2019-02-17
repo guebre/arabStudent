@@ -22,6 +22,17 @@ class Users_model extends CI_Model
         }
     }
 
+
+    function process_create_user_diplome($data)
+    {
+        if ($this->db->insert('users_diplome', $data)) {
+            return $this->db->insert_id();
+        } else {
+           return false;
+        }
+    }
+
+
     function process_update_user($id, $data) 
     {
         $this->db->where('usr_id', $id);
@@ -41,6 +52,18 @@ class Users_model extends CI_Model
           return false;
         }
     }
+
+    function process_update_user_diplome($id, $data) 
+    {
+        $this->db->where('id_user', $id);
+        if ($this->db->update('users_diplome', $data)) {
+          return true;
+        } else {
+          return false;
+        }
+    }
+
+
 
     function get_user_details($id)
     {

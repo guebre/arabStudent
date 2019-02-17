@@ -74,8 +74,12 @@ $lang['common_form_elements_go'] = "Valider";
 $lang['common_form_elements_update'] = "Update";
 $lang['common_form_elements_cancel'] = "Annuler";
 $lang['update_erreur'] = "Erreur de traitement";
-
-
+$lang['lib_diplome'] =  "Nom diplôme";
+$lang['date_obtention'] = "Année d'obtention";
+$lang['common_form_elements_add'] = 'Ajouter';
+$lang['nouveau_diplome'] = "Nouveau diplôme";
+$lang['choose_year'] ="Choisir Année";
+$lang['add_diplome'] = "Ajout ok";
 // Accueil message 
 $lang['message_accueil'] = "Plateforme d'inscription des etudiants franco-arabe";
 
