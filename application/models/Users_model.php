@@ -76,6 +76,17 @@ class Users_model extends CI_Model
         }
     }
 
+    function get_diplome_details($id)
+    {
+        $this->db->where('id_user', $id);
+        $result = $this->db->get('users_diplome');
+        if ($result) {
+        return $result;
+        } else {
+        return false;
+        }
+    }
+
     function get_user_details_v1($id)
     {   
         $this->db->select('*');
@@ -114,6 +125,15 @@ class Users_model extends CI_Model
     function delete_user($id) 
     {
         if($this->db->delete('users', array('usr_id' => $id))) {
+           return true;
+        } else {
+           return false;
+        }
+    }
+
+    function delete_diplome($id) 
+    {
+        if($this->db->delete('users_diplome', array('id_diplome' => $id))) {
            return true;
         } else {
            return false;

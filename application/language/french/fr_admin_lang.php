@@ -80,6 +80,9 @@ $lang['common_form_elements_add'] = 'Ajouter';
 $lang['nouveau_diplome'] = "Nouveau diplôme";
 $lang['choose_year'] ="Choisir Année";
 $lang['add_diplome'] = "Ajout ok";
+$lang['diplome_add_error'] = "Une erreur de traitement";
+$lang['diplome_add_ok'] = "Le diplome enregisté avec succès !";
+$lang['nb_diplome'] = "Vous avez 0 diplome enregistré";
 // Accueil message 
 $lang['message_accueil'] = "Plateforme d'inscription des etudiants franco-arabe";
 

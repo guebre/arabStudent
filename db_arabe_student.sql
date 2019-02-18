@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 13 fév. 2019 à 23:04
+-- Généré le :  lun. 18 fév. 2019 à 00:31
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -74,8 +74,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 DROP TABLE IF EXISTS `users_diplome`;
 CREATE TABLE IF NOT EXISTS `users_diplome` (
   `id_diplome` int(11) NOT NULL AUTO_INCREMENT,
-  `libele_diplome` varchar(255) NOT NULL,
-  `date_obtention` date NOT NULL,
+  `id_user` int(6) NOT NULL,
+  `lib_diplome` varchar(255) NOT NULL,
+  `date_obtention` int(11) NOT NULL,
   PRIMARY KEY (`id_diplome`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 

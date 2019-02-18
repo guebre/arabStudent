@@ -27,29 +27,11 @@
 <br>
 <hr>
 <div class="row">
+    <div class="col-md-12"><h3>Mes diplômes </h3></div>
+</div>
+<div class="row">
     <div class="col-md-12" id="list_diplome">
-       <h3> Liste des diplômes </h3>
-       <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">Nom diplôme</th>
-                <th scope="col">Date obtention</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>Bac French</td>
-            <td>2011</td>
-            <td><button  type="button" class="btn btn-danger btn-sm" id="diplome-1"> <i class = "fas fa-trash-alt"> </i> Supprimer </button></td>
-            </tr>
-            <tr>
-            <td>Licence Frech</td>
-            <td>2014</td>
-            <td><button  type="button" class="btn btn-danger btn-sm" id="diplome-1"> <i class = "fas fa-trash-alt"> </i> Supprimer </button></td>
-            </tr>
-        </tbody>
-        </table>
-    
+      
     </div>
+
 </div>

@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
     $("#profile1").html("");
     $('#error2').html(" ");
     $("#profile2").html("");
-
+    getDiplome();
 
     // profile 1
     $("#frm_profile1").submit(function (event) {
@@ -144,7 +144,7 @@ jQuery(document).ready(function ($) {
             data: $(this).serialize(),
         })
             .done(function (data) {
-                console.log(data);
+                //console.log(data);
                 $("#submit_profile3").removeClass("ld ld-ext-right running");
                 $("#submit_profile3").children().removeClass('ld ld-ring ld-spin-fast');
                 $.each(data, function (key, value) {
@@ -156,6 +156,7 @@ jQuery(document).ready(function ($) {
                         $('.error').html(" ");
                         $("#usr_lib_diplome").val("");
                         $("#usr_date_diplome").val("undefined");
+                        getDiplome();
                         return false;
                     } else {
                         if (value !== "") {
@@ -186,5 +187,32 @@ jQuery(document).ready(function ($) {
             })
 
     });
+
+
+    function getDiplome() {
+        let url = base_url + "me/diplome";
+        $("#list_diplome").load(url);
+    }
+
+    $('body').on('click', '.del_diplome', function () {
+        let idDiplome = $(this).data("diplome");
+        //alert(idDiplome);
+
+        $.ajax({
+            url: base_url + 'me/del_diplome',
+            method: "POST",
+            dataType: 'json',
+            data: { diplome: idDiplome }
+        })
+            .done(function (data) {
+                console.log(data);
+                getDiplome();
+            })
+            .fail(function () {
+                alert("error");
+            })
+
+    });
+
 
 });

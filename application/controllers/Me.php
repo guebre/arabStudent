@@ -282,14 +282,23 @@ class Me extends CI_Controller {
 
             $id = $this->session->userdata('usr_id');
             $data =  array(
-                'lib_diplome' => $this->input->post('usr_lib_diplome'),
+                'lib_diplome' => strtoupper($this->input->post('usr_lib_diplome')),
                 'date_obtention' => $this->input->post('usr_date_diplome'),
                 'id_user' =>  $id
              );
 
             if ($this->Users_model->process_create_user_diplome($data)) {
-                $json = array(
+               /* $json = array(
                     'ok' => '<div class="alert alert-success">Ajout ok</div>'
+                );*/
+
+                $json = array(
+                    'ok' => '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong> Diplome enregisté avec succès !</strong> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>'
                 );
                 $this->output
                 ->set_content_type('application/json')
@@ -297,8 +306,18 @@ class Me extends CI_Controller {
                 
             } else {
 
-                $json = array(
+                /*$json = array(
                     'error' => '<div class="alert alert-danger">',$this->lang->line('update_erreur'),'</div>'
+                );*/
+
+                $json = array(
+
+                  'error' => '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong> Une erreur de traitement </strong> 
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>' 
                 );
                 $this->output
                 ->set_content_type('application/json')
@@ -307,6 +326,49 @@ class Me extends CI_Controller {
   
         }
         
+
+    }
+
+    //Liste des diplomes d'un utilisateur 
+    public function diplome(){
+
+       $id = $this->session->userdata('usr_id');
+       $data = $this->Users_model->get_diplome_details($id);
+
+       if($data){
+            //var_dump($data->result());
+            $donnee['data'] = $data->result();
+            $string = $this->load->view('users/diplome',$donnee,TRUE);
+            echo  $string;
+       }else {
+            echo $this->lang->line('nb_diplome');
+       }
+
+    }
+
+
+    public function del_diplome(){
+        
+        $id_diplome = $this->input->post('diplome');
+
+        if($this->Users_model->delete_diplome($id_diplome)){
+            $json = array(
+                'success' => "delete success"
+            ) ;
+
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($json));
+        }else {
+            $json = array(
+                'error' => "delete error"
+            ) ;
+
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($json));
+        }
+
 
     }
 
