@@ -29,11 +29,9 @@
     </div>
    
     <div class="form-group">
-        <button type="submit" class="btn btn-success" id="submit_profile">
+        <button type="submit" class="btn btn-success btn-block mb-5" id="submit_profile">
             <?php echo $this->lang->line('common_form_elements_update');?>
             <i></i>
             </button>
-            or <?php echo anchor('users',$this->lang->line('common_form_elements_cancel'),'class="btn btn-info"');?>
     </div>
-</form> <br>
-<?php echo anchor('me/pwd_email/'.$id,'Reset Email') ; ?>
+</form> 

@@ -35,8 +35,8 @@
         <div class="error2"> </div>
     </div>
     <?php echo form_hidden($id); ?>
-    <div class="form-group text-center">
-        <button type="submit" class="btn btn-success btn-lg" id="submit_profile2">
+    <div class="form-group text-center mb-5">
+        <button type="submit" class="btn btn-success btn-block" id="submit_profile2">
             <?php echo $this->lang->line('common_form_elements_update');?>
             <i></i>
         </button>

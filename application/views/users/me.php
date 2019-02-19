@@ -1,8 +1,8 @@
 <div class="page-header">
-    <h1><?php echo $page_heading ; ?></h1>
+    <h1><?php /*echo $page_heading ;*/ echo $this->lang->line('me_infos'); ?></h1>
 </div>
 
-<div class="container">
+<div class="container mb-5">
     <p class="lead"><?php echo $this->lang->line('usr_form_instruction');?></p>
     <nav class="nav nav-pills nav-justified" id="nav-tab" role="tablist">
         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><strong>Profil_1 </strong> </a>
@@ -25,4 +25,13 @@
             <?php  $this->load->view('users/profile3'); ?>
         </div>
     </div> 
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
 </div>

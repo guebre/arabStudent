@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid fixed-bottom">
        <div class="row">
            <div class="col-md-12 bg-secondary text-white text-center">
                 <ul class="list-inline">

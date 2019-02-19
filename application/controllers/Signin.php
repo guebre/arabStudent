@@ -11,11 +11,11 @@ class Signin extends CI_Controller {
     
     public function index() {
         if ($this->session->userdata('logged_in') == TRUE) {
-            if ($this->session->userdata('usr_access_level') == 1) {
-                redirect('users');
-            } else {
+            //if ($this->session->userdata('usr_access_level') == 1) {
+                //redirect('users');
+           // } else {
                redirect('me');
-            }
+           // }
         } else {
             // Set validation rules for view filters
             $this->form_validation->set_rules('usr_email', $this->lang->line('signin_email'), 'required|valid_email|min_length[5]|max_length[125]');
@@ -61,13 +61,13 @@ class Signin extends CI_Controller {
                                     );
                                     // Save data to session
                                     $this->session->set_userdata($data);
-                                    if ($data['usr_access_level'] == 2) {
+                                   // if ($data['usr_access_level'] == 2) {
                                         redirect('me');
-                                    } elseif ($data['usr_access_level'] == 1) {
-                                        redirect('users');
-                                    } else {
-                                        redirect('me');
-                                    }
+                                   // } elseif ($data['usr_access_level'] == 1) {
+                                    //    redirect('users');
+                                   // } else {
+                                        //redirect('me');
+                                    //}
 
                                 }
                             } else {

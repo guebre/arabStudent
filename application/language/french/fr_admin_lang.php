@@ -64,9 +64,12 @@ address provided.";
 // New password
 $lang['signin_new_pwd_instruction'] = "Reset your password";
 $lang['signin_new_pwd_email'] = "Your email";
-$lang['signin_new_pwd_pwd'] = "Password";
-$lang['signin_new_pwd_confirm'] = "Confirm password";
+$lang['signin_new_pwd_pwd'] = "Nouveau password";
+$lang['signin_new_pwd_confirm'] = "Confirmation password";
 $lang['signin_new_pwd_code'] = "Code";
+$lang['new_password_message'] = "Nouveau mot de passe";
+$lang['mon_compte'] = "Mon compte";
+$lang['me_infos'] = "Mes infos";
 // Delete
 $lang['delete_confirm_message'] = "Are you sure you want to delete
 the user: ";
@@ -83,6 +86,10 @@ $lang['add_diplome'] = "Ajout ok";
 $lang['diplome_add_error'] = "Une erreur de traitement";
 $lang['diplome_add_ok'] = "Le diplome enregisté avec succès !";
 $lang['nb_diplome'] = "Vous avez 0 diplome enregistré";
+$lang['update_password'] = "Changer mot de passe"; 
+$lang['users_list'] = "Liste des utilisateurs";
+$lang['logout_message'] = "Se déconnecter";
+$lang['welcome'] = "Bienvenue !";
 // Accueil message 
 $lang['message_accueil'] = "Plateforme d'inscription des etudiants franco-arabe";
 

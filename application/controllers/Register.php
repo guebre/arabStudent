@@ -8,6 +8,14 @@ class Register extends CI_Controller {
         $this->lang->load('fr_admin', 'french');
         $this->load->model('register_model');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger" role="alert">', '</div>');
+        if ($this->session->userdata('logged_in') == TRUE) {
+            //if ($this->session->userdata('usr_access_level') == 1) {
+                //redirect('users');
+           // } else {
+               redirect('me');
+            //}
+        }
+   
     }
 
     public function index() {
@@ -36,8 +44,13 @@ class Register extends CI_Controller {
                 'usr_access_level' => 2,
                 'usr_hash' => $hash
             );
-            if ($this->register_model->register_user($data)) {
-               /* $file = file_get_contents(base_url("application/views/email_scripts/welcome.txt"));
+            
+            $insert_id = $this->register_model->register_user($data);
+            if ($insert_id) {
+              
+                $user_infos = array('id_user' => $insert_id);
+                $this->register_model->register_user_infos($user_infos);
+                /* $file = file_get_contents(base_url("application/views/email_scripts/welcome.txt"));
                 $file = str_replace('%usr_fname%', $data['usr_fname'],$file);
                 $file = str_replace('%usr_lname%', $data['usr_lname'],$file);
                 $file = str_replace('%password%', $password, $file);

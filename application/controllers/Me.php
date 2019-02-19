@@ -12,7 +12,7 @@ class Me extends CI_Controller {
         $this->lang->load('fr_admin', 'french');
         $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
 
-        if ( ($this->session->userdata('logged_in') == FALSE) || (!$this->session->userdata('usr_access_level') >= 2) ) {
+        if ( ($this->session->userdata('logged_in') == FALSE) ) {
              redirect('signin/signout');
         }
     }
@@ -42,11 +42,11 @@ class Me extends CI_Controller {
                 $usr_lname = $row->usr_lname;
                 $usr_uname = $row->usr_uname;
                 $usr_email = $row->usr_email;
-                $usr_add1 = $row->usr_add1;
+               /* $usr_add1 = $row->usr_add1;
                 $usr_add2 = $row->usr_add2;
                 $usr_add3 = $row->usr_add3;
                 $usr_town_city = $row->usr_town_city;
-                $usr_zip_pcode = $row->usr_zip_pcode;
+                $usr_zip_pcode = $row->usr_zip_pcode;*/
 
                 $usr_date_naiss = $row->date_naiss;
                 $usr_lieu_naiss = $row->lieu_naiss;
