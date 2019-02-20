@@ -130,6 +130,23 @@ class Users_model extends CI_Model
            return false;
         }
     }
+    function delete_user_infos($id) 
+    {
+        if($this->db->delete('users_infos', array('id_user' => $id))) {
+           return true;
+        } else {
+           return false;
+        }
+    }
+
+    function delete_user_diplome($id) 
+    {
+        if($this->db->delete('users_diplome', array('id_user' => $id))) {
+           return true;
+        } else {
+           return false;
+        }
+    }
 
     function delete_diplome($id) 
     {

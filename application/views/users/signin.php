@@ -13,6 +13,6 @@
              <input type="password" name="usr_password" class="form-control" placeholder="<?php echo $this->lang->line('admin_login_password') ; ?>" required>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo $this->lang->line('admin_login_signin') ; ?></button>
-        <?php echo anchor('password',$this->lang->line('signin_forgot_password')); ?>
+        <?php //echo anchor('password',$this->lang->line('signin_forgot_password')); ?>
     <?php echo form_close() ; ?>
 </div>

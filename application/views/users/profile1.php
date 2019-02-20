@@ -1,14 +1,14 @@
 <form id="frm_profile1">
     <div class="form-group">
         <?php //echo form_error('usr_fname'); ?>
-        <label for="usr_fname"><?php echo $this->lang->line('usr_fname');?></label>
-        <?php echo form_input($usr_fname); ?>
+        <label for="usr_lname"><?php echo $this->lang->line('usr_lname');?></label>
+        <?php echo form_input($usr_lname); ?>
         <div class="error"> </div>
     </div>
     <div class="form-group">
         <?php //echo form_error('usr_lname'); ?>
-        <label for="usr_lname"><?php echo $this->lang->line('usr_lname');?></label>
-        <?php echo form_input($usr_lname); ?>
+        <label for="usr_fname"><?php echo $this->lang->line('usr_fname');?></label>
+        <?php echo form_input($usr_fname); ?>
         <div class="error"> </div>
     </div>
     <div class="form-group">

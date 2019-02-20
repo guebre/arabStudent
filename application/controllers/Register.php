@@ -20,8 +20,9 @@ class Register extends CI_Controller {
 
     public function index() {
         // Set validation rules
-        $this->form_validation->set_rules('usr_fname',$this->lang->line('usr_fname'), 'required|min_length[1]|max_length[125]');
+       
         $this->form_validation->set_rules('usr_lname',$this->lang->line('usr_lname'), 'required|min_length[1]|max_length[125]');
+        $this->form_validation->set_rules('usr_fname',$this->lang->line('usr_fname'), 'required|min_length[1]|max_length[125]');
         $this->form_validation->set_rules('usr_email', $this->lang->line('usr_email'), 'required|min_length[1]|max_length[255]|valid_email|is_unique[users.usr_email]');
         
         // Begin validation

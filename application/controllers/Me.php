@@ -114,8 +114,8 @@ class Me extends CI_Controller {
         // Set validation rules
         // Set validation rules
         //var_dump($_POST);
-        $this->form_validation->set_rules('usr_fname', $this->lang->line('usr_fname'), 'required|min_length[1]|max_length[125]');
         $this->form_validation->set_rules('usr_lname', $this->lang->line('usr_lname'), 'required|min_length[1]|max_length[125]');
+        $this->form_validation->set_rules('usr_fname', $this->lang->line('usr_fname'), 'required|min_length[1]|max_length[125]');
         $this->form_validation->set_rules('usr_uname', $this->lang->line('usr_uname'), 'required|min_length[1]|max_length[125]');
         $this->form_validation->set_rules('usr_email', $this->lang->line('usr_email'), 'required|min_length[1]|max_length[255]|valid_email');
         $this->form_validation->set_rules('usr_confirm_email', $this->lang->line('usr_confirm_email'), 'required|min_length[1]|max_length[255]|valid_email|matches[usr_email]');
@@ -133,8 +133,8 @@ class Me extends CI_Controller {
 
             
             $json = array(
-                'usr_fname' => form_error('usr_fname'),
                 'usr_lname' => form_error('usr_lname'),
+                'usr_fname' => form_error('usr_fname'),
                 'usr_uname' => form_error('usr_uname'),
                 'usr_email' => form_error('usr_email'),
                 'usr_confirm_email' => form_error('usr_confirm_email')
@@ -173,8 +173,8 @@ class Me extends CI_Controller {
         } else { // Validation passed, now escape the data
             
             $data = array(
-                'usr_fname' => $this->input->post('usr_fname'),
                 'usr_lname' => $this->input->post('usr_lname'),
+                'usr_fname' => $this->input->post('usr_fname'),
                 'usr_uname' => $this->input->post('usr_uname'),
                 'usr_email' => $this->input->post('usr_email'),
                 /*'usr_add1' => $this->input->post('usr_add1'),
@@ -466,6 +466,44 @@ class Me extends CI_Controller {
         }
     }
     **/
+
+    //Liste des utilisateurs 
+    public function users(){
+        $data['page_heading'] = $this->lang->line('list_users');
+        $data['query'] = $this->Users_model->get_all_users();
+        $this->load->view('common/header');
+        $this->load->view('common/navbar_users');
+        $this->load->view('users/view_all_users',$data);
+        $this->load->view('common/copyright');
+    }
+
+    public function delete_user(){
+
+         // Set validation rules
+         $this->form_validation->set_rules('id', $this->lang->line('usr_id'), 'required|min_length[1]|max_length[11]|integer|is_natural');
+         if ($this->input->post()) {
+             $id = $this->input->post('id');
+         } else {
+             $id = $this->uri->segment(3);
+         }
+         $data['page_heading'] = $this->lang->line('confirm_delete');
+         if ($this->form_validation->run() == FALSE) { // First load,or problem with form
+            
+             $data['query'] = $this->Users_model->get_user_details($id);
+             $this->load->view('common/header');
+             $this->load->view('common/navbar_users');
+             $this->load->view('users/delete_user', $data);
+             $this->load->view('common/copyright');
+         } else {
+             if ($this->Users_model->delete_user($id)) {
+                  $this->Users_model->delete_user_infos($id);
+                  $this->Users_model->delete_user_diplome($id);
+                  redirect('me/users');
+             }else{
+                redirect('me/users');
+             }
+         }
+    }
 
 
 

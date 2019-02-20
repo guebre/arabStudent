@@ -5,10 +5,10 @@
     <?php echo form_open('register'); ?> 
        <fieldset>   
             <div class="form-group">
-               <input type="text" class="form-control" name="usr_fname" placeholder="<?php echo $this->lang->line('register_first_name'); ?>" autofocus>
+               <input type="text" class="form-control" name="usr_lname" placeholder="<?php echo $this->lang->line('register_first_name'); ?>" autofocus>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="usr_lname" placeholder="<?php echo $this->lang->line('register_last_name'); ?>" >
+                <input type="text" class="form-control" name="usr_fname" placeholder="<?php echo $this->lang->line('register_last_name'); ?>" >
             </div>
             <div class="form-group">
                <input type="email" class="form-control" name="usr_email" placeholder="<?php echo $this->lang->line('register_email');?>" >

@@ -35,8 +35,8 @@ $lang['email_subject_reset_password'] = "Reset your password.";
 $lang['usr_form_instruction_new'] = "New User Details";
 $lang['usr_form_instruction_edit'] = "Edit User Details";
 $lang['usr_id'] = "ID";
-$lang['usr_fname'] = "Nom";
-$lang['usr_lname'] = "Prenom";
+$lang['usr_lname'] = "Nom";
+$lang['usr_fname'] = "Prenom";
 $lang['usr_uname'] = "Pseudo";
 $lang['usr_email'] = "Email";
 $lang['usr_confirm_email'] = "Confirm Email";
@@ -55,6 +55,10 @@ $lang['formation'] = "Formation après diplomes";
 $lang['association'] = "Adhésion à une association";
 $lang['telephone'] = "Téléphone";
 $lang['secteur_act'] = "Secteur d'activité";
+$lang['list_users'] ="Liste des utilisateurs";
+$lang['no_users'] ="Aucun d'utilisateurs";
+$lang['actions'] = "Actions";
+$lang['status'] = "Statut";
 
 
 // Forgot password
@@ -76,6 +80,9 @@ the user: ";
 $lang['common_form_elements_go'] = "Valider";
 $lang['common_form_elements_update'] = "Update";
 $lang['common_form_elements_cancel'] = "Annuler";
+$lang['common_form_elements_action_delete'] = "Supprimer";
+$lang['confirm_delete'] ="Voulez-vous vraiment supprimer ";
+$lang['confirm_message'] = "Confirmation de suppression";
 $lang['update_erreur'] = "Erreur de traitement";
 $lang['lib_diplome'] =  "Nom diplôme";
 $lang['date_obtention'] = "Année d'obtention";
