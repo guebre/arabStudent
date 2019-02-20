@@ -3,37 +3,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // General
 $lang['system_system_name'] = "Auth System";
 // Top Nav
-$lang['top_nav_users'] = "Users";
-$lang['top_nav_new'] = 'New';
-$lang['top_nav_signin'] = "Login";
-$lang['top_nav_signout'] = "Logout";
+$lang['top_nav_users'] = "Utilisateurs";
+$lang['top_nav_new'] = 'Nouveau';
+$lang['top_nav_signin'] = "Connexion";
+$lang['top_nav_signout'] = "Déconnexion";
+$lang['fr_lang']="Français";
+$lang['ar_lang']="Arabe";
+$lang['langue'] ="Langue";
 // Login
 $lang['signin_email'] = "Email";
 $lang['signin_password'] = "Password";
-$lang['admin_login_header'] = "Please sign in";
+$lang['admin_login_header'] = "Se connecter";
 $lang['admin_login_email'] = "Email";
-$lang['admin_login_password'] = "Password";
-$lang['admin_login_signin'] = "Signin...";
-$lang['admin_login_error'] = "Whoops! Something went wrong - have
-another go!";
-$lang['forgot_pwd_header'] = 'Reset Password...';
-$lang['forgot_pwd_instruction'] = 'Enter your email in the box
-below and if your email is in the database we will send you a
-new password' ;
-$lang['signin_forgot_password'] = "Forgot Password?";
+$lang['admin_login_password'] = "Mot de passe";
+$lang['admin_login_signin'] = "connexion...";
+$lang['admin_login_error'] = "Whoops! Une erreur de connexion ";
+$lang['forgot_pwd_header'] = 'Changer le mot de passe ';
+$lang['forgot_pwd_instruction'] = 'Enter votre email dans le champ si votre addresse exit dans le système vous recevrer un mail' ;
+$lang['signin_forgot_password'] = "Mot de passe oublié?";
 // Register
 $lang['register_page_title'] = "Inscription...";
-$lang['register_first_name'] = "Nom ";
-$lang['register_last_name'] = "Prenom";
+$lang['register_first_name'] = "Prenom ";
+$lang['register_last_name'] = "Nom";
 $lang['register_email'] = "Email";
 $lang['register_accueil_message'] = "Je m'inscris";
+$lang['register_validate'] = "Valider";
 // Emails
-$lang['email_subject_new_password'] = "Your new password.";
-$lang['email_subject_password'] = "Your new password.";
-$lang['email_subject_reset_password'] = "Reset your password.";
+$lang['email_subject_password'] = "votre nouveau mot de passe .";
+$lang['email_subject_reset_password'] = "Reinitialiser le mot de passe.";
 // New/Edit User
 $lang['usr_form_instruction_new'] = "New User Details";
-$lang['usr_form_instruction_edit'] = "Edit User Details";
+$lang['usr_form_instruction_edit'] = "Modifier User infos";
 $lang['usr_id'] = "ID";
 $lang['usr_lname'] = "Nom";
 $lang['usr_fname'] = "Prenom";
@@ -69,7 +69,7 @@ address provided.";
 $lang['signin_new_pwd_instruction'] = "Reset your password";
 $lang['signin_new_pwd_email'] = "Your email";
 $lang['signin_new_pwd_pwd'] = "Nouveau password";
-$lang['signin_new_pwd_confirm'] = "Confirmation password";
+$lang['signin_new_pwd_confirm'] = "Confirmation mot de passe";
 $lang['signin_new_pwd_code'] = "Code";
 $lang['new_password_message'] = "Nouveau mot de passe";
 $lang['mon_compte'] = "Mon compte";
@@ -81,7 +81,7 @@ $lang['common_form_elements_go'] = "Valider";
 $lang['common_form_elements_update'] = "Update";
 $lang['common_form_elements_cancel'] = "Annuler";
 $lang['common_form_elements_action_delete'] = "Supprimer";
-$lang['confirm_delete'] ="Voulez-vous vraiment supprimer ";
+$lang['confirm_delete'] ="Etes vous sure de vouloir supprimer l'utilisateur: ";
 $lang['confirm_message'] = "Confirmation de suppression";
 $lang['update_erreur'] = "Erreur de traitement";
 $lang['lib_diplome'] =  "Nom diplôme";
@@ -99,5 +99,15 @@ $lang['logout_message'] = "Se déconnecter";
 $lang['welcome'] = "Bienvenue !";
 // Accueil message 
 $lang['message_accueil'] = "Plateforme d'inscription des etudiants franco-arabe";
+$lang['welcome_message1']="Bienvenue,sur notre plateforme";
+$lang['welcome_message2']="association des eleves & etudiants diplomes des ecoles franco-arabe du burkina faso";
+$lang['welcome_message3']="Incrivez-vous des à presents pour bénéficier de meilleurs opportinutés  sur le plan nationale et internationale";
+
+//Copyright 
+$lang['copyright1']="Copyright © 2019";
+$lang['copyright2']="Powered by Ibrahim GUEBRE";
+$lang['copyright3']="Tel: (+226) 78936114  Mail: guebbou@hotmail.com";
+
+
 
 

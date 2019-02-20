@@ -21,10 +21,10 @@ $image_properties = array(
 
           <ul class="navbar-nav ml-auto">
               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle h5" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Langue</a>
+                  <a class="nav-link dropdown-toggle h5" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php  echo $this->lang->line('langue');?></a>
                   <div class="dropdown-menu" aria-labelledby="dropdown07">
-                    <a class="dropdown-item active" href="index.html#">Francais</a>
-                    <a class="dropdown-item" href="index.html#">Arabe</a>
+                    <a class="dropdown-item active" href="index.html#"><?php  echo $this->lang->line('fr_lang');?></a>
+                    <a class="dropdown-item" href="index.html#"><?php echo $this->lang->line('ar_lang');?></a>
                   </div>
               </li>
           </ul>
@@ -46,7 +46,7 @@ $image_properties = array(
               </li>
             <?php else: ?>
               <li class="nav-item">
-                <a class="nav-link btn btn-outline-warning" href="<?php echo base_url('signin'); ?>">Connexion <span class="sr-only">(current)</span></a>
+                <a class="nav-link btn btn-outline-warning" href="<?php echo base_url('signin'); ?>"><?php echo $this->lang->line('top_nav_signin'); ?> <span class="sr-only">(current)</span></a>
               </li>
             <?php endif; ?>
           </ul>

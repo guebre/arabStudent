@@ -1,4 +1,4 @@
-<form id="frm_profile3">
+<form id="frm_profile3 ">
     <fieldset>
         <legend> <h3><u><?php echo $this->lang->line('nouveau_diplome');?> </u></h3>  </legend> 
         <div id="profile3">
@@ -30,7 +30,7 @@
     <div class="col-md-12"><h3>Mes diplômes </h3></div>
 </div>
 <div class="row">
-    <div class="col-md-12" id="list_diplome">
+    <div class="col-md-12 table-responsive" id="list_diplome">
       
     </div>
 

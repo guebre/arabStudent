@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 table-responsive">
    <h2><?php echo $page_heading ; ?></h2>
 <table class="table table-bordered">
     <thead>
@@ -18,7 +18,7 @@
                 <td><?php echo $row->usr_lname ; ?></td>
                 <td><?php echo $row->usr_fname ; ?></td>
                 <td><?php echo $row->usr_email ; ?></td>
-                <td><?php echo anchor('me/delete_user/'.$row->usr_id,'<i class = "fas fa-trash-alt"> </i> '.$this->lang->line('common_form_elements_action_delete'),array('class'=> 'btn btn-danger')) ; ?>
+                <td><?php echo anchor('me/delete_user/'.$row->usr_id,'<i class = "fas fa-trash-alt"> </i> '.$this->lang->line('common_form_elements_action_delete'),array('class'=> 'btn btn-danger btn-sm')) ; ?>
                 </td>
             </tr>
             <?php endforeach ; ?>
