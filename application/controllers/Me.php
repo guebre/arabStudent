@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Me extends CI_Controller {
+class Me extends MY_Controller {
 
     function __construct() {
 
@@ -9,9 +9,7 @@ class Me extends CI_Controller {
    
         $this->load->model('Users_model');
         // Load language file
-        $this->lang->load('fr_admin', 'french');
-        $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
-
+        //$this->lang->load('fr_admin', 'french');
         if ( ($this->session->userdata('logged_in') == FALSE) ) {
              redirect('signin/signout');
         }

@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Register extends CI_Controller {
+class Register extends MY_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->lang->load('fr_admin', 'french');
+        //$this->lang->load('fr_admin', 'french');
         $this->load->model('register_model');
-        $this->form_validation->set_error_delimiters('<div class="alert alert-danger" role="alert">', '</div>');
+       // $this->form_validation->set_error_delimiters('<div class="alert alert-danger" role="alert">', '</div>');
         if ($this->session->userdata('logged_in') == TRUE) {
             //if ($this->session->userdata('usr_access_level') == 1) {
                 //redirect('users');
@@ -28,7 +28,7 @@ class Register extends CI_Controller {
         // Begin validation
         if ($this->form_validation->run() == FALSE) {  //First load, or problem with form
             $this->load->view('common/header');
-            $this->load->view('common/logo_header');
+            $this->load->view('common/navbar_users');
             $this->load->view('users/register');
             $this->load->view('common/copyright');
         } else {
@@ -66,7 +66,7 @@ class Register extends CI_Controller {
                 }*/
                 $data['password'] =  $password;
                 $this->load->view('common/header');
-                $this->load->view('common/logo_header');
+                $this->load->view('common/navbar_users');
                 $this->load->view('users/register_welcome',$data);
                 $this->load->view('common/copyright');
                // redirect('signin');

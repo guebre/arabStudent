@@ -13,7 +13,7 @@
             <div class="form-group">
                <input type="email" class="form-control" name="usr_email" placeholder="<?php echo $this->lang->line('register_email');?>" >
             </div>
-            <?php echo form_submit('submit', 'Register', 'class="btn btn-success btn-block"'); ?>
+            <?php echo form_submit('submit', ''.$this->lang->line('register_validate').'', 'class="btn btn-success btn-block"'); ?>
         </fieldset>
-   <?php echo form_close(); ?>
+   <?php echo form_close(); ?>   
 </div>

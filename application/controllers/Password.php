@@ -1,12 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Password extends CI_Controller {
+class Password extends MY_Controller {
+
     function __construct(){
+        
         parent::__construct();
         $this->load->model('Users_model');
         // Load language file
-        $this->lang->load('fr_admin', 'french');
-        $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
+        //$this->lang->load('fr_admin', 'french');
+        ///$this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
     }
     public function index(){
         //redirect('password/forgot_password');

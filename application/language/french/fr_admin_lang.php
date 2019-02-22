@@ -108,6 +108,17 @@ $lang['copyright1']="Copyright © 2019";
 $lang['copyright2']="Powered by Ibrahim GUEBRE";
 $lang['copyright3']="Tel: (+226) 78936114  Mail: guebbou@hotmail.com";
 
+//suite de la traduction
+
+$lang['register_info1'] = "cher";
+$lang['register_info2'] = "Bienvenue sur le site, Votre mot de passe est : ";
+$lang['register_info3'] = " Nos compliments, The group";
+$lang['profil1'] = "Profil1";
+$lang['profil2'] ="Profil2";
+$lang['profil3'] = "Profil3";
+$lang['mes_diplomes'] = "Mes diplômes";
+
+
 
 
 

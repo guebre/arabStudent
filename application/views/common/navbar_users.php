@@ -18,17 +18,17 @@ $image_properties = array(
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
-
+        <?php //if(!$this->session->userdata('logged_in')) : ?> 
           <ul class="navbar-nav ml-auto">
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle h5" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php  echo $this->lang->line('langue');?></a>
                   <div class="dropdown-menu" aria-labelledby="dropdown07">
-                    <a class="dropdown-item active" href="index.html#"><?php  echo $this->lang->line('fr_lang');?></a>
-                    <a class="dropdown-item" href="index.html#"><?php echo $this->lang->line('ar_lang');?></a>
+                    <a class="dropdown-item" href="<?php echo base_url('accueil/setLang/french'); ?>"><?php  echo $this->lang->line('fr_lang');?></a>
+                    <a class="dropdown-item" href="<?php echo base_url('accueil/setLang/arabe'); ?>"><?php echo $this->lang->line('ar_lang');?></a>
                   </div>
               </li>
           </ul>
-
+        <?php //endif; ?>
           <ul class="navbar-nav ml-auto">
     
               <?php if($this->session->userdata('logged_in')) : ?> 

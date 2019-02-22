@@ -5,9 +5,9 @@
 <div class="container mb-5">
     <p class="lead"><?php echo $this->lang->line('usr_form_instruction');?></p>
     <nav class="nav nav-pills nav-justified" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><strong>Profil_1 </strong> </a>
-        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><strong>Profil_2</strong></a>
-        <a class="nav-item nav-link" id="nav-profil3-tab" data-toggle="tab" href="#nav-profil3" role="tab" aria-controls="nav-profil3" aria-selected="false"><strong>Mes diplômes </strong></a>
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><strong><?php echo $this->lang->line('profil1'); ?> </strong> </a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><strong><?php echo $this->lang->line('profil1'); ?></strong></a>
+        <a class="nav-item nav-link" id="nav-profil3-tab" data-toggle="tab" href="#nav-profil3" role="tab" aria-controls="nav-profil3" aria-selected="false"><strong><?php echo $this->lang->line('mes_diplomes'); ?> </strong></a>
     </nav>
     <div class="tab-content nav-pill " id="nav-tabContent">
     <br>

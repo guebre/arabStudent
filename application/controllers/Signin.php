@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Signin extends CI_Controller {
+class Signin extends MY_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->lang->load('fr_admin', 'french');
-        $this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
+        //$this->lang->load('fr_admin', 'french');
+        //$this->form_validation->set_error_delimiters('<div class="alert alert-warning" role="alert">', '</div>');
     }
     
     public function index() {
@@ -22,7 +22,7 @@ class Signin extends CI_Controller {
             $this->form_validation->set_rules('usr_password', $this->lang->line('signin_password'), 'required|min_length[5]|max_length[30]');
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('common/header');
-                $this->load->view('common/logo_header');
+                $this->load->view('common/navbar_users');
                 $this->load->view('users/signin');
                 $this->load->view('common/copyright');
             } else {
@@ -44,7 +44,7 @@ class Signin extends CI_Controller {
                                     // Didn't match so send back to login
                                     $data['login_fail'] = true;
                                     $this->load->view('common/header');
-                                    $this->load->view('common/logo_header');
+                                    $this->load->view('common/navbar_users');
                                     $this->load->view('users/signin', $data);
                                     $this->load->view('common/copyright');
                                 } else {
@@ -57,7 +57,7 @@ class Signin extends CI_Controller {
                                         'usr_fname' => $row->usr_fname,
                                         'usr_lname' => $row->usr_lname,
                                         'usr_access_level' => $row->usr_access_level,
-                                        'logged_in' => TRUE
+                                        'logged_in' => TRUE,
                                     );
                                     // Save data to session
                                     $this->session->set_userdata($data);
@@ -78,7 +78,7 @@ class Signin extends CI_Controller {
                 }else{
                     $data['login_fail'] = true;
                     $this->load->view('common/header');
-                    $this->load->view('common/logo_header');
+                    $this->load->view('common/navbar_users');
                     $this->load->view('users/signin', $data);
                     $this->load->view('common/copyright');
                 }
@@ -91,7 +91,7 @@ class Signin extends CI_Controller {
 
     public function signout() {
         $this->session->sess_destroy();
-        redirect ('signin');
+        redirect ('accueil');
     }
 
 }
