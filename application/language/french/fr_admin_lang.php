@@ -100,7 +100,7 @@ $lang['welcome'] = "Bienvenue !";
 // Accueil message 
 $lang['message_accueil'] = "Plateforme d'inscription des etudiants franco-arabe";
 $lang['welcome_message1']="Bienvenue,sur notre plateforme";
-$lang['welcome_message2']="association des eleves & etudiants diplomes des ecoles franco-arabe du burkina faso";
+$lang['welcome_message2']="Association des élèves et diplômés des écoles franco-arabe du burkina faso";
 $lang['welcome_message3']="Incrivez-vous des à presents pour bénéficier de meilleurs opportinutés  sur le plan nationale et internationale";
 
 //Copyright 
